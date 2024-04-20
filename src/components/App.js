@@ -16,7 +16,6 @@ const App = () => {
         let secondArr = secondname.split("");
         let newArr = [];
 
-        // To splice array and modify string
         for(let i=0; i<firstArr.length; i++){
             let flag = false;
             for(let j=0; j<secondArr.length; j++){
@@ -27,13 +26,11 @@ const App = () => {
                 }
             }
             if(!flag){
-                // Then only need to add it(char) in our first string array
                 newArr.push(firstArr[i]);
             }
         }
 
 
-        // To calculate relationship status
         let str = newArr.join("") + secondArr.join("");
         let n = (str.length) % 6;
         switch(n){
@@ -66,7 +63,7 @@ const App = () => {
             <input type="text" placeholder="Enter second name" value={secondname} 
                 onChange={(e) => setSecondname(e.target.value)} data-testid="input2" name="name2" />
             <button onClick={calculateRelationship} data-testid="calculate_relationship" >Calculate Relationship Future</button>
-            <button onClick={clearStatus} data-testid="clear" >Clear</button>
+            <button onClick={clearStatus} data-testid="clear">Clear</button>
 
             <h3 data-testid="answer" >{status}</h3>
         </div>
